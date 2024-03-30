@@ -45,7 +45,7 @@ int main()
 	while (1)
 	{
 
-		outb(numbers[index], DATA_PORT); // Send data to the data port
+		outb(numbers[index], (~DATA_PORT) | (1 << 7)); // Send data to the data port
 		index++;						 // Increment index
 		index %= 10;					 // Reset index to 0 if it reaches 10
 		sleep(1);						 // Pause for 1 second before sending the next data
