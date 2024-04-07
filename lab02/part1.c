@@ -31,7 +31,7 @@ int main()
 	// Loop indefinitely to send data to the parallel port
 	while (1)
 	{
-		outb(data, DATA_PORT); // Send data to the data port
+		outb(data, ~DATA_PORT); // Send data to the data port
 		if (data == 64)
 		{
 			data = 1; // Reset data to 1 if it reaches 64
